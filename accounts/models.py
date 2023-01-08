@@ -25,6 +25,7 @@ class Product(models.Model):
         ('Out Door', 'Out Door')
 
     )
+    
     name = models.CharField(max_length=200, null=True)
     price = models.FloatField(null=True)
     category = models.CharField(max_length=200, null=True, choices=CATEGORY)
