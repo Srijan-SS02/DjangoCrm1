@@ -29,9 +29,9 @@ def registerPage(request):
             group = Group.objects.get(name="customer")
             user.groups.add(group)
             Customer.objects.create(
-                user
+                user=user,
             )
-
+ 
             messages.success(request, 'Account was created for ' + user)
 
             return redirect('login')
@@ -105,6 +105,14 @@ def userPage(request):
         
     })
 
+
+@login_required(login_url='login')
+@allowed_users(allowed_roles=['customer'])
+
+def accountSettings(request):
+    return render(request, 'accounts/account_settings.html',{
+        
+    })
 
 @login_required(login_url='login')
 @allowed_users(allowed_roles=['admin'])
