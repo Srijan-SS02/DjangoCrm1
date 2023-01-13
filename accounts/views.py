@@ -114,7 +114,10 @@ def accountSettings(request):
     form  = CustomerForm(instance=customer)
     
     if request.method == 'POST':
-        form = CustomerForm(request.POST , request.FILES, instance = customer )
+        form = CustomerForm(request.POST , request.FILES, instance = customer)
+        if form.is_valid():
+            form.save()
+            
     return render(request, 'accounts/account_settings.html',{
       'form':form  
     })
