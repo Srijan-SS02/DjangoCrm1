@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 
 class Profile(models.Model):
     user= models.OneToOneField(User, null =True , blank=True , on_delete=models.CASCADE)
-    first_name= models.CharFiels()
+    first_name= models.CharField(max_length=200)
 
 class Customer(models.Model):
     user= models.OneToOneField(User, null =True , blank=True , on_delete=models.CASCADE)
@@ -14,7 +14,7 @@ class Customer(models.Model):
     email = models.CharField(max_length=200, null=True)
     profile_pic=models.ImageField(default="pngwing.com.png",null=True, blank=True)
     date_created= models.DateTimeField(auto_now_add=True, null=True)
-
+    
     def __str__(self) -> str:
         return self.name
 
