@@ -133,3 +133,13 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 MEDIA_ROOT = os.path.join(BASE_DIR,'static/images')
+
+
+#SMTP Configration
+
+EMAIL_BACKEND=''
+EMAIL_HOST=''
+EMAIL_PORT=587
+EMAIL_USE_TLS=True
+EMAIL_HOST_USER='codeofficialsrjansriv@gmail.com'
+EMAIL_HOST_PASSWORD='Srijansriv@2002'
